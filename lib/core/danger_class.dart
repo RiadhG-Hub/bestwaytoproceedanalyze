@@ -1,17 +1,41 @@
+/// Represents different levels of danger based on a score range.
 enum DangerClass {
-  verySafe, // 90-100: Very Safe
-  safe, // 80-89: Safe
-  generallySafe, // 70-79: Generally Safe
-  moderatelySafe, // 60-69: Moderately Safe
-  somewhatSafe, // 50-59: Somewhat Safe
-  moderatelyUnsafe, // 40-49: Moderately Unsafe
-  unsafe, // 30-39: Unsafe
-  veryUnsafe, // 20-29: Very Unsafe
-  extremelyUnsafe, // 10-19: Extremely Unsafe
-  extremelyHazardous // 0-9: Extremely Hazardous
+  /// 90-100: Very Safe
+  verySafe,
+
+  /// 80-89: Safe
+  safe,
+
+  /// 70-79: Generally Safe
+  generallySafe,
+
+  /// 60-69: Moderately Safe
+  moderatelySafe,
+
+  /// 50-59: Somewhat Safe
+  somewhatSafe,
+
+  /// 40-49: Moderately Unsafe
+  moderatelyUnsafe,
+
+  /// 30-39: Unsafe
+  unsafe,
+
+  /// 20-29: Very Unsafe
+  veryUnsafe,
+
+  /// 10-19: Extremely Unsafe
+  extremelyUnsafe,
+
+  /// 0-9: Extremely Hazardous
+  extremelyHazardous
 }
 
+/// Extension on the int type to map an integer score to a [DangerClass].
 extension IntDangerClassExtension on int {
+  /// Maps an integer score to a [DangerClass] based on predefined ranges.
+  ///
+  /// Throws a [RangeError] if the value is not within the range of 0 to 100.
   DangerClass get dangerClass {
     if (this >= 90 && this <= 100) {
       return DangerClass.verySafe;
