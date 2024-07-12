@@ -8,7 +8,8 @@ import 'core/danger_class.dart';
 /// A class that provides functionality to analyze the safety of a given way.
 class BestWayAnalyze {
   /// The remote data source for accessing and storing way data.
-  final BestWayRemoteDataSources bestWayRemoteDataSources = BestWayRemoteDataSources();
+  final BestWayRemoteDataSources bestWayRemoteDataSources =
+      BestWayRemoteDataSources();
 
   /// The data of the way to be analyzed.
   final WayData wayData;
