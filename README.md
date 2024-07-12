@@ -1,39 +1,68 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Best way to proceed analyzer
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package designed to analyze AI output and store results in Firebase. This package provides a seamless integration with Firebase for efficient data management and retrieval of AI analysis results.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **AI Output Analysis**: Analyze outputs from AI models and generate insightful results.
+- **Firebase Integration**: Store and retrieve analysis results from Firebase.
+- **User-friendly API**: Simple and easy-to-use API for developers.
+- **Customization**: Flexible configuration options for various use cases.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Prerequisites
+
+- Flutter SDK: [Install Flutter](https://flutter.dev/docs/get-started/install)
+- Firebase Account: [Create a Firebase project](https://firebase.google.com)
+- Dart: [Install Dart](https://dart.dev/get-dart)
+
+### Installation
+
+Add this to your package's `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  bestwaytoproceedanalyze:
+    git:
+      url: https://github.com/riadhrahma/bestwaytoproceedanalyze.git
+      ref: dev
+  firebase_core: latest
+  cloud_firestore: latest
+```
+
+### Setup Firebase
+
+1. Follow the official Firebase setup guide for Flutter: [Add Firebase to your Flutter app](https://firebase.google.com/docs/flutter/setup)
+2. Initialize Firebase in your Flutter project.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import the package and initialize it in your project:
 
 ```dart
-const like = 'sample';
+WayData wayData = WayData.fromJson({});
+  final BestWayAnalyze analyzer= BestWayAnalyze(wayData);
+  Future<void > startAnalyze() async {
+    final result = await analyzer.analyze(saveData: true);
+    log(result.name);
+  }
 ```
+
+
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+For more information, please visit our [documentation](https://github.com/riadhrahma/bestwaytoproceedanalyze/doc).
+
+### Contributing
+
+We welcome contributions!
+
+### Filing Issues
+
+If you encounter any issues, please file them [here](https://github.com/riadhrahma/bestwaytoproceedanalyze/issues). Our team will respond as quickly as possible.
+
+For further inquiries or support, reach out to [gharbiriadh16@gmail.com](mailto:gharbiriadh16@gmail.com).
+
+Happy coding!
