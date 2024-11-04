@@ -15,10 +15,7 @@ dependencies:
     git:
       url: https://github.com/riadhrahma/bestwaytoproceedcore.git
       ref: dev
-  firebase_crud:
-    git:
-      url: https://github.com/riadhrahma/firebase_crud.git
-      ref: dev
+  firebase_facilitator: ^1.1.5
 
 dev_dependencies:
   flutter_test:

@@ -23,7 +23,7 @@ class BestWayAnalyze {
   /// Returns the [DangerClass] representing the safety level of the way.
   Future<DangerClass> analyze({bool saveData = false}) async {
     if (saveData) {
-      await bestWayRemoteDataSources.add(data: wayData.toJson());
+      await bestWayRemoteDataSources.saveDocument(data: wayData.toJson());
     }
 
     return wayData.safetyPercentage!.dangerClass;
